@@ -71,7 +71,7 @@ export default function App() {
                 <input
                   type="password"
                   name="password"
-                  placeholder="Password"
+                  placeholder="Enter Password"
                   required=""
                   ref={passRef}
                 />
@@ -80,7 +80,7 @@ export default function App() {
                 Sign Up
               </button>
             </form>
-            <Link to={"/v1/notebook/login"} className="btn btn-primary border w-100">Login if you already have an account!</Link>
+            <p class="signup"><Link to={"/v1/notebook/login"} className="signup">Login Here if You Already Have an Account!</Link></p>
           </div>
         </div>
       </div>

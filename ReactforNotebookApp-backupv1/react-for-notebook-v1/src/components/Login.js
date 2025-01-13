@@ -1,4 +1,3 @@
-//import React, { useState } from "react";
 import React, { useRef } from 'react';
 import { Link } from "react-router-dom";
 import Validation from "../InputValidation";
@@ -59,20 +58,20 @@ Author URL: http://w3layouts.com
   {/* Style */}
   <link rel="stylesheet" href='../css/Login.css' type="text/css" media="all" />
   {/* login form */}
-  <section className="w3l-login">
-    <div className="overlay">
-      <div className="wrapper">
-        <div className="form-section">
+  <div className="w3l-login">
+  <div className="overlay"  >
+    <div className="wrapper">
+      <div className="form-section" >
           <h3>Login</h3>
           <h5>Welcome Back!</h5>
           <form onSubmit={handleSubmit} className="signin-form">
             <div className="form-input">
               <input
                 type="text"
-                name="username"
+                name="username" 
                 placeholder="Enter Username"
-                required=""
-                autoFocus=""
+                required
+                autoFocus
                 ref={nameRef}
               />
             </div>
@@ -80,16 +79,16 @@ Author URL: http://w3layouts.com
               <input
                 type="password"
                 name="password"
-                placeholder="Password"
-                required=""
+                placeholder="Enter Password"
+                required
                 ref={passRef}
               />
             </div>
-            <button type="submit" className="btn btn-success theme-button mt-4">
+            <button type="submit" className="btn btn-success theme-button mt-4 w-70">
               Log in
             </button>
           </form>
-          <Link to={"/v1/notebook/signUp"} className="btn btn-primary border w-100">Sign Up if you haven't!</Link>
+          <p class="signup"><Link to={"/v1/notebook/signUp"} className="signup">Sign Up Here to Create an Account!</Link></p>
         </div>
       </div>
     </div>
@@ -105,41 +104,8 @@ Author URL: http://w3layouts.com
         </a>
       </p>
     </div>
-    {/* //copyright */}
-  </section>
-  {/* /login form */}
+  </div>  
 </>
-
-    // <div className="d-flex justify-content-center align-items-center bg-info vh-100">
-    //   <div className="bg-white p-3 rounded w-25">
-    //     <h2>Welcome Back!</h2>
-    //     <br />
-    //     <form onSubmit={handleSubmit}>
-    //       <div className="mb-3">
-    //         <label htmlFor="username"><strong>Username</strong></label>
-    //         <input 
-    //           type="text" 
-    //           name="username" 
-    //           placeholder="Enter Username" 
-    //           ref={nameRef}
-    //           className="form-control rounded-0" 
-    //         />
-    //       </div>
-    //       <div className="mb-3">
-    //         <label htmlFor="password"><strong>Password</strong></label>
-    //         <input 
-    //           type="password" 
-    //           name="password" 
-    //           placeholder="Enter Password" 
-    //           ref={passRef}
-    //           className="form-control rounded-0" 
-    //         />
-    //       </div>
-    //       <button type="submit" className="btn btn-success w-100 mb-2">Login</button>
-    //       <Link to={"/v1/notebook/signUp/"} className="btn btn-primary border w-100">Sign Up here if you haven't!</Link>
-    //     </form>
-    //   </div>
-    // </div>
   );
 }
 
