@@ -3,15 +3,6 @@ It's backend runs as a Spring Boot app using maven and hibernate for data operat
 Web frontend side is a React app. This is my first time working with Javascript. Axios library is used to send requests to server side.</br>
 Mobile forntend is designed in Android Studio with Kotlin and Jetpack Compose. 
 
-<h5>Web Browser Login Page</h5>
-![Ekran görüntüsü 2025-01-15 002104](https://github.com/user-attachments/assets/cb2fc055-c340-4c2f-8dad-682871d7df0e)
-
 <h5>Note Management Panel for Web</h5>
-![Ekran görüntüsü 2025-01-14 223402](https://github.com/user-attachments/assets/654816ff-f2c9-4cb6-b168-d4969f99c214)
 
-<h5>Mobile Sign Up Page</h5>
-
-(https://github.com/user-attachments/assets/97d72bac-eef9-4397-b26d-ba025d42ffea)
-
-<h5>Mobile Notes Management Panel</h5>
-(https://github.com/user-attachments/assets/d0cb9ac1-a3d5-4ed9-a13a-72f780814e97)
+![Ekran görüntüsü 2025-01-14 223402](https://github.com/user-attachments/assets/4e2baced-8cf2-489b-9044-4099bc336bda)
