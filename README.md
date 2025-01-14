@@ -7,9 +7,10 @@ Mobile forntend is designed in Android Studio with Kotlin and Jetpack Compose.
 ![Ekran görüntüsü 2025-01-15 002104](https://github.com/user-attachments/assets/cb2fc055-c340-4c2f-8dad-682871d7df0e)
 
 <h5>Note Management Panel for Web</h5>
-![Ekran görüntüsü 2025-01-14 223402](https://github.com/user-attachments/assets/9aee481e-5f63-4fdf-9922-b608a669afed)
+![Ekran görüntüsü 2025-01-14 223402](https://github.com/user-attachments/assets/654816ff-f2c9-4cb6-b168-d4969f99c214)
 
 <h5>Mobile Sign Up Page</h5>
+
 (https://github.com/user-attachments/assets/97d72bac-eef9-4397-b26d-ba025d42ffea)
 
 <h5>Mobile Notes Management Panel</h5>
