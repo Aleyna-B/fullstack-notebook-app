@@ -4,10 +4,10 @@ Web frontend side is a React app. This is my first time working with Javascript.
 Mobile forntend is designed in Android Studio with Kotlin and Jetpack Compose. 
 
 <h5>Web Browser Login Page</h5>
-![login page](https://github.com/Aleyna-B/assets/4a806c38-62fa-4866-b056-8fa14e258239)
+![Ekran görüntüsü 2025-01-15 002104](https://github.com/user-attachments/assets/cb2fc055-c340-4c2f-8dad-682871d7df0e)
 
 <h5>Note Management Panel for Web</h5>
-![Ekran görüntüsü 2025-01-14 223402](https://github.com/user-attachments/assets/eaf38257-6753-4172-97ed-cae33a692b90)
+![Ekran görüntüsü 2025-01-14 223402](https://github.com/user-attachments/assets/9aee481e-5f63-4fdf-9922-b608a669afed)
 
 <h5>Mobile Sign Up Page</h5>
 (https://github.com/user-attachments/assets/97d72bac-eef9-4397-b26d-ba025d42ffea)
