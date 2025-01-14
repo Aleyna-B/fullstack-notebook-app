@@ -14,7 +14,7 @@ export default function UserNotes(){
   };
 
   const handleAddNote = async (event) => {
-    event.preventDefault();   //bunun yukarıda olması önemli
+    event.preventDefault();       //bunun yukarıda olması önemli
     notebody.title = titleRef.current.value
     notebody.note = noteRef.current.value
     console.log('Submitted title: ' + notebody.title);
@@ -29,7 +29,15 @@ export default function UserNotes(){
         console.log("new note added");
         titleRef.current.value = ""
         noteRef.current.value = ""
-
+      //yenilensin diye tekrar get atılıyor
+        axiosInstance.get('/user/notepage')
+        .then(response => {
+          setNotes(response.data);
+          console.error('response:', response.data);
+        })
+        .catch(error => {
+          console.error('Error fetching:', error);
+        });
       }
       else alert("Save data response is faulty");
     }
@@ -42,7 +50,7 @@ export default function UserNotes(){
     }
   }
 
-  useEffect(() => {
+  useEffect(() => {       //renderlanırken notlar çekilsin diye
     axiosInstance.get('/user/notepage')
       .then(response => {
         setNotes(response.data);
@@ -57,15 +65,6 @@ export default function UserNotes(){
     titleRef.current.value = note.title;
     noteRef.current.value = note.note;
     handleDeleteNote(note.id,index);
-
-    // var addbtn = document.getElementById('addBtn');
-    // //addbtn.disabled = 'true';
-    // addbtn.hidden = 'true';
-    // if (newNote !== null) {
-    //   const updatedNotes = notes;
-    //   updatedNotes[index] = newNote;
-    //   setNotes(updatedNotes);
-    // }
   };
 
   const handleDeleteNote = async (note_id,index) => {
@@ -83,8 +82,8 @@ export default function UserNotes(){
     } catch (error) {
       console.error('Error fetching notes:', error);
     }  
-    const updatedNotes = notes.slice();
-    updatedNotes.splice(index, 1);
+    const updatedNotes = notes.slice();   //*slice()* arrayleri kopyalamak için
+    updatedNotes.splice(index, 1);    //indexdeki elemandan itibaren 1 eleman silinecek *splice()*
     setNotes(updatedNotes);
   };
 
@@ -95,20 +94,20 @@ export default function UserNotes(){
   <title>Modern Note Taking App</title>
   <link rel="stylesheet" href="../css/Note.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <div style={{ display: 'flex', height: '100vh', width: '100%',backgroundColor:'#dbccf9'}}>
-      <div style={{ width: '160%', padding: '20px'}}>
+    <div style={{ display: 'flex', height: '100vh', width: '1910px',backgroundColor:'#dbccf9'}}>
+      <div style={{ width: '100%', padding: '20px', display:'inline-block'}}>
       <h3 style={{ color: '#260863', paddingLeft:'30px'}}>Manage your notes here!</h3>
         <textarea
           name="title" 
           placeholder="Enter the title here" 
           ref={titleRef}
-          style={{ width: '100%', height: '10%' }}
+          style={{ width: '100%', height: '10%' ,resize: 'none'}}
         />
         <textarea
           name="note" 
           placeholder="Enter your new note here" 
           ref={noteRef}
-          style={{ width: '100%', height: '75%' }}
+          style={{ width: '100%', height: '75%' ,resize: 'none'}}
         />
         <button id='addBtn'
           onClick={handleAddNote}
@@ -116,22 +115,21 @@ export default function UserNotes(){
         >
           Add New Note
         </button>
-        
+        <p style={{ color: '#ec76ad' }}>Image by juicy_fish on Freepik</p>
       </div>
-      {/* style={{ display: 'flex', justifyContent: 'space-between',  backgroundColor: '#eed',alignItems: 'center', paddingBottom: '0px',paddingTop:'10px', marginBottom: '15px', border: '1px solid #ccc' }} */}
-      {/* <div style={{overflowY: 'auto',width:'100%' , padding: '20px',backgroundColor: '#8c53ff'}}> */}
-        <div style={{overflowY: 'auto',width:'100%' , padding: '20px',backgroundColor: '#dbccf9'}}>
-        <h4 style={{ color: '#260863', paddingLeft:'140px'}}>Your Other Notes</h4>
+      
+      <div style={{overflowY: 'auto',width:'50%' , padding: '10px', display: 'inline-block', justifyContent: 'space-between',backgroundColor:'#dbccf9',alignItems: 'center',paddingTop:'10px', border: '1px solid #ccc' }}>
+        <h4 style={{ color: '#260863', textAlign:'center'}}>Your Other Notes</h4>
         {notes.map((note,index) => (
-          <div key={index} style={{ marginBottom: '20px', padding: '10px'}}> 
-            <ul style={{ listStyleType: "none" }} id='list-container'>        
+          <div key={index} style={{ marginBottom: '20px', padding: '10px'}} id='list-container'> 
+            <ul style={{ listStyleType: "none" }} >        
               <li key={note.id}>
                 <h5>{note.title}</h5>
                 <p>{note.note}</p>
                 <p>{note.creationTime}</p>
               </li> 
             </ul>           
-            <div>
+            <div style={{alignItems:'center'}}>
               <button id='editBtn'
                   onClick={() => handleEditNote(note,index)}
                   style={{padding: '10px 10px', cursor: 'pointer'}}
@@ -145,16 +143,14 @@ export default function UserNotes(){
                   Delete
                 </button>
                 
-              </div>
             </div>
+          </div>
           ))}
-          <br></br>
-          <p style={{ color: '#ec76ad' }}>------------------Image by juicy_fish on Freepik-------------------------------------------------------------------------------------</p>
-        </div>
+       </div>
+    </div>
         
-      </div>
       
-    {/* </div> */}
+      
     </>
   );
 }
